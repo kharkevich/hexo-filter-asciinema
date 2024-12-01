@@ -8,7 +8,7 @@ if(root.endsWith('/')){
   root = root.slice(0,root.length-1);
 }
 
-var css_tag = '<script src="' + root + '/assets/asciinema-player.js"></script>';
+var css_tag = '<script src="' + root + '/assets/asciinema-player.min.js"></script>';
 var js_tag = '<link rel="stylesheet" type="text/css" href="' + root + '/assets/asciinema-player.css" />';
 var player_tag = '<div id="$1"></div><script>AsciinemaPlayer.create("$1",document.getElementById("$1"));</script>';
 
@@ -39,9 +39,9 @@ hexo.extend.generator.register('asciinema-css', function(locals) {
 hexo.extend.generator.register('asciinema-js', function(locals) {
 
   return {
-    path: 'assets/asciinema-player.js',
+    path: 'assets/asciinema-player.min.js',
     data: function() {
-      return fs.createReadStream(__dirname + '/resources/asciinema-player.js');
+      return fs.createReadStream(__dirname + '/resources/asciinema-player.min.js');
     }
   };
 });
