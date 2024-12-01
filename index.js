@@ -8,8 +8,8 @@ if(root.endsWith('/')){
   root = root.slice(0,root.length-1);
 }
 
-var css_tag = '<script src="' + root + '/assets/asciinema-player.min.js"></script>';
-var js_tag = '<link rel="stylesheet" type="text/css" href="' + root + '/assets/asciinema-player.css" />';
+var css_tag = '<link rel="stylesheet" type="text/css" href="' + root + '/assets/asciinema-player.css" />';
+var js_tag = '<script src="' + root + '/assets/asciinema-player.min.js" type="application/javascript"></script>';
 var player_tag = '<div id="$1"></div><script>AsciinemaPlayer.create("$1",document.getElementById("$1"));</script>';
 
 hexo.extend.filter.register('before_post_render', function(data) {
